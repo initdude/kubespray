@@ -22,7 +22,7 @@ declare -a IPS=(10.10.1.3 10.10.1.4 10.10.1.5)
 CONFIG_FILE=inventory/mycluster/hosts.yml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 ```
 
-Then use `inventory/mycluster/hosts.yml` as inventory file.
+Then use `inventory/mycluster/inventory.ini` as inventory file.
 
 ## Starting custom deployment
 
@@ -32,7 +32,7 @@ and start the deployment:
 **IMPORTANT**: Edit my\_inventory/groups\_vars/\*.yaml to override data vars:
 
 ```ShellSession
-ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml -b -v \
+ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v \
   --private-key=~/.ssh/private_key
 ```
 
